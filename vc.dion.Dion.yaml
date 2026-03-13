@@ -14,7 +14,7 @@ finish-args:
   - --share=network
   - --socket=pulseaudio # Sound in/out
   - --socket=wayland
-  - --socket=x11
+  - --socket=fallback-x11
   - --talk-name=org.kde.StatusNotifierWatcher
   - --filesystem=xdg-download
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
