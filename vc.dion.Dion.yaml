@@ -49,7 +49,7 @@ modules:
         dest-filename: start-dion
         commands:
           - export TMPDIR="${XDG_RUNTIME_DIR}/app/${FLATPAK_ID}"
-          - zypak-wrapper /app/extra/dion --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations "$@"
+          - zypak-wrapper /app/extra/dion --ozone-platform-hint=auto --enable-features=UseOzonePlatform,WaylandWindowDecorations "$@"
       - type: file
         path: vc.dion.Dion.desktop
       - type: file
