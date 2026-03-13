@@ -13,7 +13,8 @@ finish-args:
   - --share=ipc
   - --share=network
   - --socket=pulseaudio # Sound in/out
-  - --socket=x11 # Dion does not support wayland or fallback-x11
+  - --socket=wayland
+  - --socket=fallback-x11
   - --talk-name=org.kde.StatusNotifierWatcher
   - --filesystem=xdg-download
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
@@ -29,15 +30,16 @@ modules:
       - install -Dm 644 ${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
     sources:
       - type: extra-data
-        url: https://static.dion.vc/desktop_app/dion_5.28.0_amd64.deb
-        sha256: e0e5276989b2baf389233abbfc0ea49171270058dd61ff08ca965f99467b5a9c
-        size: 92050392
+        url: https://static.dion.vc/desktop_app/dion_5.29.0_amd64.deb
+        sha256: 664596855bb525f7d7b42d6c797feb472c3e8c4cf689fe4b24c7bdf697149f3a
+        size: 98111058
         filename: dion.deb
         x-checker-data:
           type: json
           url: https://api-clients.dion.vc/v2/constants/desktop-versions
           version-query: .linux.version
-          url-query: .linux.items[] | select(.title=="deb") | .download_link | rtrimstr(" ")
+          url-query: .linux.items[] | select(.title=="deb") | .download_link | rtrimstr("
+            ")
       - type: script
         dest-filename: apply_extra.sh
         commands:
@@ -47,7 +49,7 @@ modules:
         dest-filename: start-dion
         commands:
           - export TMPDIR="${XDG_RUNTIME_DIR}/app/${FLATPAK_ID}"
-          - zypak-wrapper /app/extra/dion "$@"
+          - zypak-wrapper /app/extra/dion --ozone-platform-hint=auto --enable-features=UseOzonePlatform,WaylandWindowDecorations "$@"
       - type: file
         path: vc.dion.Dion.desktop
       - type: file
