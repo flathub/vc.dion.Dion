@@ -13,7 +13,8 @@ finish-args:
   - --share=ipc
   - --share=network
   - --socket=pulseaudio # Sound in/out
-  - --socket=x11 # Dion does not support wayland or fallback-x11
+  - --socket=wayland
+  - --socket=fallback-x11
   - --talk-name=org.kde.StatusNotifierWatcher
   - --filesystem=xdg-download
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
@@ -48,7 +49,7 @@ modules:
         dest-filename: start-dion
         commands:
           - export TMPDIR="${XDG_RUNTIME_DIR}/app/${FLATPAK_ID}"
-          - zypak-wrapper /app/extra/dion "$@"
+          - zypak-wrapper /app/extra/dion --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations "$@"
       - type: file
         path: vc.dion.Dion.desktop
       - type: file
