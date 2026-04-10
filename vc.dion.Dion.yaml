@@ -30,9 +30,9 @@ modules:
       - install -Dm 644 ${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
     sources:
       - type: extra-data
-        url: https://static.dion.vc/desktop_app/dion_5.29.1_amd64.deb
-        sha256: 0eb113b40468f342d931e027488e0cc27d6c32fe7f64c257a9f6e7d78a49548a
-        size: 98098886
+        url: https://static.dion.vc/desktop_app/dion_5.30.0_amd64.deb
+        sha256: dfe968f3319deb2e13cd7670ead314f3971c931865224634e6e3a14e0dfe0c35
+        size: 98118928
         filename: dion.deb
         x-checker-data:
           type: json
@@ -49,7 +49,8 @@ modules:
         dest-filename: start-dion
         commands:
           - export TMPDIR="${XDG_RUNTIME_DIR}/app/${FLATPAK_ID}"
-          - zypak-wrapper /app/extra/dion --ozone-platform-hint=auto --disable-features=GlobalShortcutsPortal "$@"
+          - zypak-wrapper /app/extra/dion --ozone-platform-hint=auto --disable-features=GlobalShortcutsPortal
+            "$@"
       - type: file
         path: vc.dion.Dion.desktop
       - type: file
