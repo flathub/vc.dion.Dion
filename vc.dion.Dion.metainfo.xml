@@ -75,6 +75,9 @@
     <control>touch</control>
   </recommends>
   <releases>
+    <release version="5.33.0" date="2026-07-01">
+      <description></description>
+    </release>
     <release version="5.32.0" date="2026-05-21">
       <description><p>Update dion.deb to 5.32.0</p></description>
     </release>
