@@ -15,8 +15,6 @@
   <url type="help">https://faq.dion.vc/</url>
   <update_contact>support@dion.vc</update_contact>
   <description>
-    <p>**This wrapper is not verified by, affiliated with, or supported by dion.vc.**</p>
-    <p xml:lang="ru">**Данная обертка над официальной версией для компьютера не проверена, не связана и не поддерживается dion.vc.**</p>
     <p>Video conferencing service with a hybrid cloud infrastructure.</p>
     <p xml:lang="ru">Сервис видеоконференцсвязи с гибридной облачной инфраструктурой.</p>
     <ul>
