@@ -30,9 +30,9 @@ modules:
       - install -Dm 644 ${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
     sources:
       - type: extra-data
-        url: https://static.dion.vc/desktop_app/dion_5.34.0_amd64.deb
-        sha256: 727bbac2c0f5fc7c7a143a64eb06203eff1e05a4235bf8729cbbc02bb2af6e34
-        size: 104198550
+        url: https://static.dion.vc/desktop_app/dion_5.34.1_amd64.deb
+        sha256: b77f73c9d42845adbbb8ab3fedb12a0ac0c55767b9f2b1b55539683f07ffd046
+        size: 104185906
         filename: dion.deb
         x-checker-data:
           type: json
