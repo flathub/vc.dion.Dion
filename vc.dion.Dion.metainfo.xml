@@ -74,7 +74,7 @@
   </recommends>
   <releases>
     <release version="5.34.1" date="2026-08-17">
-      <description></description>
+      <description><p>Update dion.deb to 5.34.1</description>
     </release>
     <release version="5.34.0" date="2026-07-27">
       <description><p>Update dion.deb to 5.34.0</p></description>
